@@ -46,6 +46,7 @@
     <Compile Include="Classes\AdvancedCalculate.cs" />
     <Compile Include="Classes\Calculate.cs" />
     <Compile Include="Classes\CalculateDegreeOfNumber.cs" />
+    <Compile Include="Classes\History.cs" />
     <Compile Include="Classes\ICalculate.cs" />
     <Compile Include="Classes\IAdvancedCalculate.cs" />
     <Compile Include="Classes\ICalculateDegreeOfNumber.cs" />

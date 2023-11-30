@@ -12,6 +12,7 @@ namespace CalculatorOOP.Classes
         public double FirstNumber { get; set; }
         public string Function { get; set; }
         public double SecondNumber { get; set; }
+        public List<string> History { get; set; }
 
         public Calculate(string name, double firstNumber, string function, double secondNumber)
         {
@@ -19,6 +20,7 @@ namespace CalculatorOOP.Classes
             FirstNumber = firstNumber;
             SecondNumber = secondNumber;
             Function = function;
+            History = new List<string>();
         }
 
         public virtual void CalculateAllFunctions()
@@ -42,6 +44,9 @@ namespace CalculatorOOP.Classes
                     result = 0;
                     break;
             }
+
+            string operation = $"result: {this.FirstNumber} {this.Function} {this.SecondNumber} = {result}";
+
             Console.WriteLine($"result: {this.FirstNumber} {this.Function} {this.SecondNumber} = {result}");
            /* double result = this.Function switch
             {
