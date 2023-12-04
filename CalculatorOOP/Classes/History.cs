@@ -8,8 +8,22 @@ namespace CalculatorOOP.Classes
 {
     public class History
     {
-        
+
+        List<string> histories = new List<string>();
+
+        public void AddHistory(string operation)
+        {
+            histories.Add(operation);
             
+        }
+        
+        public void Show()
+        {
+            foreach (var history in histories)
+            {
+                Console.WriteLine(history);
+            }
+        }
             
     }
 }

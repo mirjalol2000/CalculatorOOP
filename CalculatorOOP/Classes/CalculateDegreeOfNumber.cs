@@ -8,6 +8,8 @@ namespace CalculatorOOP.Classes
 {
     public class CalculateDegreeOfNumber : Calculate, ICalculateDegreeOfNumber
     {
+        History addHistory = new History();
+
         public CalculateDegreeOfNumber(string name, double firstNumber, string function, double secondNumber)
             : base(name, firstNumber, function, secondNumber)
         {
@@ -23,6 +25,8 @@ namespace CalculatorOOP.Classes
         public override void CalculateAllFunctions()
         {
             double result = DegreeOfNumber(this.FirstNumber, this.SecondNumber);
+            string operation = $"result: {this.FirstNumber} {this.Function} {this.SecondNumber} = {result}";
+            addHistory.AddHistory(operation);
             Console.WriteLine($"result: {this.FirstNumber} {this.Function} {this.SecondNumber} = {result}");
         }
 

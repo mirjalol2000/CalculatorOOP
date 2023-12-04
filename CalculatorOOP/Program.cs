@@ -13,7 +13,7 @@ namespace CalculatorOOP
         {
             while (true)
             {
-                Console.WriteLine("1.Calculator\n2.Exit");
+                Console.WriteLine("1.Calculator\n2.History\n3.Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
 
                 if (choice == 1)
@@ -60,6 +60,11 @@ namespace CalculatorOOP
                         ICalculate calculate = new Calculate(name, firstNumber, function, secondNumber);
                         calculate.CalculateAllFunctions();
                     }
+                }
+                else if (choice == 2)
+                {
+                    History showHistory = new History();
+                    showHistory.Show();
                 }
                 else
                 {

@@ -8,11 +8,13 @@ namespace CalculatorOOP.Classes
 {
     public class Calculate : ICalculate
     {
+        
         public string Name { get; set; }
         public double FirstNumber { get; set; }
         public string Function { get; set; }
         public double SecondNumber { get; set; }
-        public List<string> History { get; set; }
+        /*public List<string> History { get; set; }*/
+        History addHistory = new History();
 
         public Calculate(string name, double firstNumber, string function, double secondNumber)
         {
@@ -20,7 +22,7 @@ namespace CalculatorOOP.Classes
             FirstNumber = firstNumber;
             SecondNumber = secondNumber;
             Function = function;
-            History = new List<string>();
+           /* History = new List<string>();*/
         }
 
         public virtual void CalculateAllFunctions()
@@ -46,8 +48,8 @@ namespace CalculatorOOP.Classes
             }
 
             string operation = $"result: {this.FirstNumber} {this.Function} {this.SecondNumber} = {result}";
-
-            Console.WriteLine($"result: {this.FirstNumber} {this.Function} {this.SecondNumber} = {result}");
+            addHistory.AddHistory(operation);
+            //Console.WriteLine($"result: {this.FirstNumber} {this.Function} {this.SecondNumber} = {result}");
            /* double result = this.Function switch
             {
                 "+" => Addition(this.FirstNumber, this.SecondNumber),
